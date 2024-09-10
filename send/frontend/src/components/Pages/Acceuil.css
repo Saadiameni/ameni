@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #9e71a7;
+  --secondary-color: rgb(28, 33, 67);
+  --accent-color: #175463;
+  --text-color: #fcfafa;
+  --background-color: #f0f4f8;
+  --card-background: #ffffff;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --navbar-height: 100px; /* Assurez-vous que cette valeur est cohérente avec celle de NavBar.css */
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  padding: 0;
+}
+
+.home-container {
+  padding: 0; /* Supprimer le padding pour éviter les bordures */
+  min-height: calc(100vh - var(--navbar-height)); /* S'assurer que le conteneur occupe toute la hauteur */
+  position: relative; /* Pour le positionnement du titre */
+  margin-top: 0; /* Supprimer la marge en haut */
+  border-top: none; /* Supprimer la bordure en haut */
+  box-shadow: none; /* Supprimer l'ombre en haut */
+}
+
+.cover-photo {
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: calc(85vh - var(--navbar-height)); /* Réduire la hauteur de la fenêtre */
+  background-image: url('https://media.istockphoto.com/id/1278442973/fr/photo/concept-de-signature-%C3%A9lectronique-affaires-%C3%A0-distance-image-dun-hologramme-dun-contrat-et.jpg?s=612x612&w=0&k=20&c=IsF6-JTr9i4MwLWG2tQYSnJ-3P77srue4FzSpdg0pIU='); /* URL de l'image de couverture */
+  background-size: cover; /* Couvre tout l'espace */
+  background-position: center bottom; /* Découpe le bas de l'image */
+  background-repeat: no-repeat; /* Empêche la répétition de l'image */
+  display: flex;
+  justify-content: flex-start; /* Aligne le contenu à gauche */
+  align-items: center; /* Centre le contenu verticalement */
+  overflow: hidden;
+}
+
+.text-overlay {
+  position: absolute; /* Positionne le texte par rapport à la couverture */
+  left: 4%; /* Positionne le texte à 4% du bord gauche */
+  top: 5%; /* Positionne le texte à 10% du haut */
+  max-width: 50%; /* Limite la largeur du texte à 50% de la largeur de l'image */
+  color: white; /* Couleur du texte */
+  text-align: left; /* Aligne le texte à gauche */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Ombre pour améliorer la lisibilité */
+}
+
+.text-overlay h1 {
+  font-size: 2.5rem; /* Taille de police pour le titre */
+  margin-bottom: 0.5rem; /* Espace entre le titre et la description */
+  color: #e2c0e9;
+}
+
+.text-overlay p {
+  font-size: 1.3rem; /* Taille de police pour la description */
+  margin: 0; /* Supprime la marge */
+}
+
+.cta-container {
+  margin-top: 20px; /* Espace entre le texte et les boutons */
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 0 10px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color var(--transition-speed);
+}
+
+.cta-button.primary {
+  background-color: var(--primary-color); /* Utilisation de la variable CSS */
+  color: white;
+}
+
+.cta-button.secondary {
+  background-color: var(--secondary-color); /* Utilisation de la variable CSS */
+  color: white;
+}
+
+.cta-button.primary:hover {
+  background-color: #9e71a7; /* Couleur légèrement plus foncée */
+}
+
+.cta-button.secondary:hover {
+  background-color: rgb(28, 33, 67); /* Couleur légèrement plus foncée */
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto; /* Centrer le conteneur */
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  transition: transform var(--transition-speed) ease, 
+              box-shadow var(--transition-speed) ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px var(--shadow-color);
+}
+
+.yellow { background-color: var(--accent-color); color: var(--text-color); }
+.green { background-color: var(--secondary-color); color: var(--card-background); }
+.blue { background-color: var(--primary-color); color: var(--card-background); }
+
+.home-description {
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  background-color: var(--card-background);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .features-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-button {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0; /* Espace entre les boutons */
+  }
+
+  .marketing-grid {
+    grid-template-columns: 1fr;
+    gap: 100px;
+  }
+
+  .marketing-item {
+    flex-direction: none;
+    text-align: center;
+    margin-bottom: 100px;
+  }
+
+  .image-container {
+    margin-right: 0;
+    margin-bottom: 100px;
+  }
+}
+
+.marketing-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 100px; /* Espace entre les éléments */
+}
+
+.image-container {
+  flex: 0 0 40%; /* L'image occupe 40% de la largeur */
+  margin-right: 10px; /* Espace entre l'image et le texte */
+  margin-left: 200px;
+}
+
+.image-container img {
+  width: 70%;
+  height: auto;
+  border-radius: 8px; /* Coins arrondis pour l'image */
+}
+
+.content-container {
+  flex: 1; /* Le contenu occupe le reste de l'espace */
+}
+
+.content-container h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.content-container p {
+  color: black;
+  font-size: 1rem;
+  line-height: 1.5;
+}

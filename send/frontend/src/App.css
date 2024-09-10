@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    color: #fff;
+    padding: 10px;
+    border-bottom: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    margin-left: 20px;
+}
+
+.navbar-nav {
+    margin-left: auto;
+}
+
+.nav-link {
+    color: #fff;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+    color: #ccc;
+}
+
+.content {
+    padding-top: 0; /* Set to 0 to eliminate space between navbar and content */
+    margin-bottom: 20px;
+}
+
+.content > div {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
